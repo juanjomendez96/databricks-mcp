@@ -1,0 +1,40 @@
+[project]
+name = "databricks-mcp"
+version = "0.0.0"
+description = "MCP server for reading Databricks Unity Catalog table schemas"
+readme = "README.md"
+authors = [{ name = "Juanjo Méndez", email = "juanjo96mt@gmail.com" }]
+requires-python = ">=3.10"
+dependencies = ["mcp[cli]>=1.9.0", "databricks-sdk>=0.50.0"]
+
+[project.scripts]
+databricks-mcp = "databricks_mcp.server:main"
+
+[build-system]
+requires = ["uv_build>=0.8.11,<0.9.0"]
+build-backend = "uv_build"
+
+[dependency-groups]
+dev = ["pytest>=8.0.0", "pytest-mock>=3.14.0", "python-semantic-release>=9.0.0"]
+
+[tool.semantic_release]
+version_toml = ["pyproject.toml:project.version"]
+branch = "master"
+commit_message = "chore(release): {version} [skip ci]"
+tag_format = "v{version}"
+
+[tool.semantic_release.commit_parser_options]
+allowed_tags = [
+    "feat",
+    "fix",
+    "perf",
+    "refactor",
+    "docs",
+    "style",
+    "test",
+    "chore",
+    "ci",
+    "build",
+]
+minor_tags = ["feat"]
+patch_tags = ["fix", "perf"]

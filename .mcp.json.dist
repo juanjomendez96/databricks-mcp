@@ -1,0 +1,17 @@
+{
+  "mcpServers": {
+    "databricks-mcp": {
+      "command": "uv",
+      "args": [
+        "run",
+        "--directory",
+        "[absolute-path-to-repo]",
+        "databricks-mcp"
+      ],
+      "env": {
+        "DATABRICKS_TOKEN": "${DATABRICKS_TOKEN}",
+        "DATABRICKS_HOST": "${DATABRICKS_HOST}"
+      }
+    }
+  }
+}
