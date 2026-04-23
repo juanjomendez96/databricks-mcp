@@ -1,6 +1,6 @@
 [project]
 name = "databricks-mcp"
-version = "1.0.0"
+version = "1.0.1"
 description = "MCP server for reading Databricks Unity Catalog table schemas"
 readme = "README.md"
 authors = [{ name = "Juanjo Méndez", email = "juanjo96mt@gmail.com" }]
